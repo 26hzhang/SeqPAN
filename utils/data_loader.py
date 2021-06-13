@@ -49,8 +49,8 @@ class TrainLoader:
         vfeat_lens = np.asarray(vfeat_lens, dtype=np.int32)  # (batch_size, )
         # process labels
         max_len = np.max(vfeat_lens)
-        s_labels = np.zeros(shape=[batch_size, max_len], dtype=np.int32)
-        e_labels = np.zeros(shape=[batch_size, max_len], dtype=np.int32)
+        s_labels = np.zeros(shape=[batch_size, max_len], dtype=np.float32)
+        e_labels = np.zeros(shape=[batch_size, max_len], dtype=np.float32)
         match_labels = np.zeros(shape=[batch_size, max_len], dtype=np.int32)  # (batch_size, v_seq_len)
         for idx in range(batch_size):
             st, et = s_inds[idx], e_inds[idx]
