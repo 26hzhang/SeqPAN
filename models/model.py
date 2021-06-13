@@ -4,7 +4,7 @@ from models.layers import layer_norm, conv1d, cq_attention, cq_concat, matching_
 from models.modules import word_embs, char_embs, add_pos_embs, conv_block, conditioned_predictor, dual_attn_block
 
 
-class Model:
+class SeqPAN:
     def __init__(self, configs, graph, word_vectors=None):
         self.configs = configs
         graph = graph if graph is not None else tf.Graph()

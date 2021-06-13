@@ -1,14 +1,14 @@
 import os
+import argparse
 import tensorflow as tf
 from tqdm import tqdm
-from argparse import ArgumentParser
-from models.model import Model
+from models.model import SeqPAN
 from utils.data_gen import gen_or_load_dataset
 from utils.data_loader import TrainLoader, TestLoader
 from utils.data_utils import load_json, save_json, load_video_features
 from utils.runner_utils import get_feed_dict, write_tf_summary, set_tf_config, eval_test
 
-parser = ArgumentParser(description='parameters settings')
+parser = argparse.ArgumentParser(description='parameters settings')
 # data parameters
 parser.add_argument('--save_dir', type=str, default='datasets', help='path to save processed dataset')
 parser.add_argument('--task', type=str, default='activitynet', help='[activitynet | charades | tacos]')
@@ -70,7 +70,7 @@ if configs.mode.lower() == 'train':
     save_json(vars(configs), filename=os.path.join(model_dir, "configs.json"), save_pretty=True)
     # create model and train
     with tf.Graph().as_default() as graph:
-        model = Model(configs=configs, graph=graph, word_vectors=dataset['word_vector'])
+        model = SeqPAN(configs=configs, graph=graph, word_vectors=dataset['word_vector'])
         sess_config = tf.ConfigProto(allow_soft_placement=True, log_device_placement=False)
         sess_config.gpu_options.allow_growth = True
         with tf.Session(config=sess_config) as sess:
@@ -113,7 +113,7 @@ elif configs.mode.lower() in ['val', 'test']:
     configs = parser.parse_args()
     # load model and test
     with tf.Graph().as_default() as graph:
-        model = Model(configs=configs, graph=graph, word_vectors=dataset['word_vector'])
+        model = SeqPAN(configs=configs, graph=graph, word_vectors=dataset['word_vector'])
         sess_config = tf.ConfigProto(allow_soft_placement=True, log_device_placement=False)
         sess_config.gpu_options.allow_growth = True
         with tf.Session(config=sess_config) as sess:
