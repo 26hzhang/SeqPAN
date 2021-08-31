@@ -1,7 +1,7 @@
 # Parallel Attention Network with Sequence Matching for Video Grounding
 
 **TensorFlow** implementation for the paper "Parallel Attention Network with Sequence Matching for Video 
-Grounding" (**ACL 2021 Findings**): [ACL version](https://aclanthology.org/2021.findings-acl.69.pdf), 
+Grounding" (**ACL 2021 Findings**): [ACL version](https://aclanthology.org/2021.findings-acl.69/), 
 [ArXiv version](https://arxiv.org/abs/2105.08481).
 
 ![overview](/figures/framework.png)
