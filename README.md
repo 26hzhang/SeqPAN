@@ -59,10 +59,16 @@ More hyper-parameter settings are in the `main.py`.
 ## Citation
 If you feel this project helpful to your research, please cite our work.
 ```
-@article{zhang2021parallel,
-  title={Parallel Attention Network with Sequence Matching for Video Grounding},
-  author={Zhang, Hao and Sun, Aixin and Jing, Wei and Zhen, Liangli and Zhou, Joey Tianyi and Goh, Rick Siow Mong},
-  journal={arXiv preprint arXiv:2105.08481},
-  year={2021}
+@inproceedings{zhang2021parallel,
+    title = "Parallel Attention Network with Sequence Matching for Video Grounding",
+    author = "Zhang, Hao  and Sun, Aixin  and Jing, Wei  and Zhen, Liangli  and Zhou, Joey Tianyi  and Goh, Siow Mong Rick",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021",
+    month = aug,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.findings-acl.69",
+    doi = "10.18653/v1/2021.findings-acl.69",
+    pages = "776--790",
 }
 ```
